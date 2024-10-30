@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         // Mock database insertion (in a real application, save to a database)
-        $success = "Registration successful! You can now <a href='login.html'>log in</a>.";
+        $success = "Registration successful! You can now <a href='login.php'>log in</a>.";
     }
 }
 ?>
@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <button type="submit" class="btn btn-primary btn-block">Submit</button>
                 </form>
                 <div class="text-center mt-3">
-                    <a href="login.html">Already have an account? Sign in</a>
+                    <a href="login.php">Already have an account? Sign in</a>
                 </div>
             </div>
         </div>
