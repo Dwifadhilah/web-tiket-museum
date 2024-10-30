@@ -1,3 +1,31 @@
+<?php
+// Start PHP session
+session_start();
+
+$error = $success = "";
+
+// Handle form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirmPassword = $_POST['confirmPassword'];
+
+    // Validate form inputs
+    if (empty($name) || empty($email) || empty($password) || empty($confirmPassword)) {
+        $error = "All fields are required.";
+    } elseif ($password !== $confirmPassword) {
+        $error = "Passwords do not match.";
+    } else {
+        // Hash the password (for security)
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+        // Mock database insertion (in a real application, save to a database)
+        $success = "Registration successful! You can now <a href='login.html'>log in</a>.";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,24 +44,30 @@
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <h2 class="text-center">Register</h2>
-                <form>
+                <?php if ($error): ?>
+                    <p class="text-danger text-center"><?php echo $error; ?></p>
+                <?php elseif ($success): ?>
+                    <p class="text-success text-center"><?php echo $success; ?></p>
+                <?php endif; ?>
+                
+                <form action="register.php" method="post">
                     <div class="form-group">
                         <label for="name">Full Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email address</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password" required>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                     </div>
                     <div class="form-group">
                         <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" required>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block"><a href="index.html">submit</a></button>
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
                 </form>
                 <div class="text-center mt-3">
                     <a href="login.html">Already have an account? Sign in</a>
