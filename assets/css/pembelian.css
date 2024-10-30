@@ -1,0 +1,93 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Checkout Section */
+#checkout {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+#checkout h2 {
+    font-weight: 700;
+    color: #4a4a4a;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.form-label {
+    font-weight: 600;
+    color: #555;
+}
+
+.form-control, .form-select {
+    border: 1px solid #d1d1d1;
+    border-radius: 6px;
+    padding: 10px;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+/* Placeholder Styling */
+.form-control::placeholder {
+    color: #888;
+}
+
+/* Button Styling */
+button[type="submit"] {
+    background: #007bff;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #0056b3;
+}
+
+/* Footer Styling */
+footer {
+    background-color: black;
+    color: white;
+    padding: 15px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #cccccc;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    #checkout {
+        padding: 20px;
+    }
+
+    #checkout h2 {
+        font-size: 20px;
+    }
+    
+    button[type="submit"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
