@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         // Mock database insertion (in a real application, save to a database)
-        $success = "Registration successful! You can now <a href='login.php'>log in</a>.";
+        $success = "Registration successful! You can now <a href='index.html'>log in</a>.";
     }
 }
 ?>
