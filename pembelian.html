@@ -28,7 +28,7 @@
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="kategori" class="form-label">Kategori</label>
-                        <select id="kategori" name="kategori" class="form-select" required>
+                        <select id="kategori" name="kategori" class="form-select" required onchange="calculateTotalPrice()">
                             <option value="" disabled selected>Pilih Kategori</option>
                             <option value="Anak-anak">Anak-anak</option>
                             <option value="Dewasa">Dewasa</option>
@@ -38,7 +38,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="ticketQuantity" class="form-label">Jumlah Tiket</label>
-                        <input type="number" id="ticketQuantity" name="ticketQuantity" class="form-control" required min="1">
+                        <input type="number" id="ticketQuantity" name="ticketQuantity" class="form-control" required min="1" oninput="calculateTotalPrice()">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -49,6 +49,13 @@
                     <div class="col-md-6">
                         <label for="expPembelian" class="form-label">EXP Pembelian</label>
                         <input type="date" id="expPembelian" name="expPembelian" class="form-control" required readonly>
+                    </div>
+                </div>
+                <!-- Total Price -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="totalPrice" class="form-label">Total Harga (Rp)</label>
+                        <input type="text" id="totalPrice" name="totalPrice" class="form-control" readonly>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary mt-3 w-100">Complete Purchase</button>
@@ -71,14 +78,42 @@
 
             if (tanggalPembelian) {
                 const pembelianDate = new Date(tanggalPembelian);
-                pembelianDate.setDate(pembelianDate.getDate() + 7); // Menambahkan 7 hari
+                pembelianDate.setDate(pembelianDate.getDate() + 7);
 
                 const year = pembelianDate.getFullYear();
-                const month = ('0' + (pembelianDate.getMonth() + 1)).slice(-2); // Tambahkan nol di depan jika kurang dari 10
+                const month = ('0' + (pembelianDate.getMonth() + 1)).slice(-2);
                 const day = ('0' + pembelianDate.getDate()).slice(-2);
 
                 expPembelian.value = `${year}-${month}-${day}`;
             }
+        }
+
+        function calculateTotalPrice() {
+            const kategori = document.getElementById('kategori').value;
+            const quantity = parseInt(document.getElementById('ticketQuantity').value) || 0;
+            const totalPriceField = document.getElementById('totalPrice');
+
+            let pricePerTicket;
+
+            switch (kategori) {
+                case 'Anak-anak':
+                    pricePerTicket = 20000;
+                    break;
+                case 'Dewasa':
+                    pricePerTicket = 50000;
+                    break;
+                case 'Pelajar':
+                    pricePerTicket = 30000;
+                    break;
+                case 'Lansia':
+                    pricePerTicket = 25000;
+                    break;
+                default:
+                    pricePerTicket = 0;
+            }
+
+            const totalPrice = pricePerTicket * quantity;
+            totalPriceField.value = totalPrice.toLocaleString('id-ID');
         }
     </script>
 </body>
