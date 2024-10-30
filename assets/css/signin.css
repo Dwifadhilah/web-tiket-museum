@@ -1,0 +1,65 @@
+body {
+    background-size: cover; /* Mengatur ukuran gambar latar belakang */
+    background-position: center; /* Memusatkan gambar latar belakang */
+    background-color: black;
+    color: #ffffff; /* Warna teks putih untuk kontras */
+    font-family: 'Arial', sans-serif; /* Menggunakan font Arial */
+}
+
+.container {
+    margin-top: 100px; /* Jarak atas untuk penempatan yang lebih baik */
+    border-radius: 15px; /* Sudut melengkung pada kontainer */
+    padding: 30px; /* Ruang dalam kontainer */
+}
+
+h2 {
+    color: #ffffff; /* Warna teks judul */
+    margin-bottom: 30px; /* Jarak bawah judul */
+    text-align: center; /* Teks judul ditengah */
+}
+
+.form-group label {
+    color: #ffffff; /* Warna label */
+}
+
+.form-control {
+    border-radius: 25px; /* Sudut melengkung pada input */
+    border: 1px solid #ffffff; /* Warna batas putih */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Animasi transisi */
+}
+
+.form-control:focus {
+    border-color: black; /* Warna batas saat fokus */
+    box-shadow: 0 0 5px rgba(45, 45, 45, 0.5); /* Bayangan saat fokus */
+}
+
+.btn-primary {
+    border-radius: 25px; /* Sudut melengkung pada tombol */
+    background-color: blue; /* Warna tombol */
+    border: none; /* Menghilangkan batas tombol */
+    transition: background-color 0.3s; /* Animasi transisi */
+}
+
+.btn-primary:hover {
+    background-color: black; /* Warna saat hover */
+}
+
+.text-center a {
+    color: white; /* Warna tautan */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    transition: color 0.3s; /* Animasi transisi */
+}
+
+.text-center a:hover {
+    text-decoration: transparent; /* Garis bawah saat hover */
+}
+
+.text-center {
+    margin-top: 20px; /* Jarak atas untuk teks tengah */
+}
+
+@media (max-width: 576px) {
+    .container {
+        margin-top: 50px; /* Jarak atas yang lebih kecil pada perangkat kecil */
+    }
+}

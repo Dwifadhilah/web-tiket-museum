@@ -1,0 +1,58 @@
+body {
+    background-color: black; /* Latar belakang yang lembut */
+}
+
+.container {
+    margin-top: 100px; /* Jarak atas yang lebih besar untuk penempatan yang lebih baik */
+}
+
+h2 {
+    color: white; /* Warna teks judul */
+    margin-bottom: 20px; /* Jarak bawah judul */
+}
+
+.form-control {
+    border-radius: 25px; /* Sudut melengkung pada input */
+    border: 1px solid white; /* Warna batas */
+    transition: border-color 0.3s; /* Animasi transisi */
+}
+
+.form-control:focus {
+    border-color: white; /* Warna batas saat fokus */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Bayangan saat fokus */
+}
+
+.btn-primary {
+    border-radius: 25px; /* Sudut melengkung pada tombol */
+    background-color: blueviolet; /* Warna tombol */
+    border: none; /* Menghilangkan batas tombol */
+    transition: background-color 0.3s; /* Animasi transisi */
+}
+
+.btn-primary a {
+    color: white; /* Warna tautan */
+    text-decoration: none; /* Menghilangkan garis bawah */
+}
+
+.btn-primary a:hover{
+    text-decoration: transparent;
+}
+
+.btn-primary:hover {
+    background-color: blue; /* Warna saat hover */
+}
+
+.text-center a {
+    color: white; /* Warna tautan */
+    text-decoration: none; /* Menghilangkan garis bawah */
+}
+
+.text-center a:hover {
+    text-decoration: transparent; /* Garis bawah saat hover */
+}
+
+@media (max-width: 576px) {
+    .container {
+        margin-top: 50px; /* Jarak atas yang lebih kecil pada perangkat kecil */
+    }
+}

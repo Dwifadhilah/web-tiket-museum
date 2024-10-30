@@ -1,0 +1,162 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: black; /* Light grey background for a modern feel */
+    color: white; /* Dark text for readability */
+}
+
+/* Navbar */
+.navbar {
+    background-color: white; /* Dark navbar for contrast */
+}
+
+.navbar-brand img {
+    height: 50px; /* Logo size */
+}
+
+.nav-link {
+    color: black !important; /* White text for links */
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: lightgrey !important; /* Tomato color on hover */
+}
+
+/* Hero Section */
+header {
+    background-image: url('/img/tampilan.jpg'); /* Background image */
+    background-size: cover;
+    padding: 80px 0;
+    position: relative;
+    color: white;
+    text-align: center; /* Center text */
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    font-size: 48px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+header p {
+    font-size: 24px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Section Styles */
+section {
+    padding: 60px 15px; /* Added padding for mobile */
+}
+
+h1 {
+    font-size: 36px;
+    color: white; /* Tomato color for headings */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card {
+    border: none; /* Remove card border */
+    border-radius: 15px; /* Rounded corners */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+    overflow: hidden; /* Ensure the border radius is visible */
+    background-color: grey; /* White background for cards */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect */
+}
+
+.card-title {
+    font-weight: bold;
+    color: black; /* Tomato color for titles */
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: black; /* Tomato color for buttons */
+    border: none;
+    border-radius: 25px; /* Rounded buttons */
+    padding: 12px 24px; /* Increase padding */
+    font-size: 16px; /* Ensure text is readable */
+    color: white; /* Text color */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth effects */
+}
+
+.btn-primary:hover {
+    background-color: lightgrey; /* Darker shade on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Footer */
+footer {
+    background-color: white; /* Dark footer */
+    color: black; /* White text */
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        padding: 50px 0; /* Reduced padding for mobile */
+    }
+
+    header h1 {
+        font-size: 32px; /* Smaller font size for mobile */
+    }
+
+    header p {
+        font-size: 20px; /* Smaller font size for mobile */
+    }
+
+    h1 {
+        font-size: 28px; /* Smaller heading font size */
+    }
+
+    section {
+        padding: 30px 15px; /* Less padding for sections on mobile */
+    }
+
+    .card {
+        margin-bottom: 20px; /* Space between cards */
+    }
+}
+
+/* Animation Effects */
+.card-title {
+    animation: fadeIn 0.5s ease; /* Simple fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
